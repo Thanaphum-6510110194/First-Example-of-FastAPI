@@ -5,7 +5,7 @@ from sqlmodel import select
 from sqlmodel.ext.asyncio.session import AsyncSession
 
 from flasx.schemas import delivery_staff_schema
-from flasx.models import get_session, DeliveryStaff
+from flasx.routers.models import get_session, DeliveryStaff
 
 router = APIRouter(prefix="/delivery-staff", tags=["delivery-staff"])
 
