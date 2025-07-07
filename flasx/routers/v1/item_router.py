@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException
-from typing import Annotated
+from datetime import datetime
 from sqlmodel import select
 from sqlmodel.ext.asyncio.session import AsyncSession
 from ...schemas import receiver_schema
@@ -83,9 +83,6 @@ async def update_item(
     update_data = item_update.model_dump(exclude_unset=True)
     for field, value in update_data.items():
         setattr(db_item, field, value)
-
-    # Update timestamp
-    from datetime import datetime
 
     db_item.updated_at = datetime.now()
 
