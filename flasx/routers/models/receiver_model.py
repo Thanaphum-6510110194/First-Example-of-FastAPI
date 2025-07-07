@@ -4,7 +4,7 @@ from datetime import datetime
 from sqlmodel import SQLModel, Field, Relationship
 
 # from .item_model import Item
-from . import receiver_schema
+from ...schemas import receiver_schema
 
 
 class Receiver(SQLModel, table=True):
